@@ -2,11 +2,10 @@ import { FC } from 'react'
 import styled from 'styled-components'
 import {Wrapper}  from '../../StyledHelpers/Components';
 import {Colors} from '../../StyledHelpers/Colors';
-import ExpandedMenu from './ExpandedMenu';
+import ExpandedMenu from '../TopBar/ExpandedMenu';
 import useDropdown from 'react-dropdown-hook';
 
 const TopBarWrapper = styled(Wrapper)`
-  /* justify-content: space-between; */
   width: 100%;
   height: auto;
   background-color: ${Colors.white};
@@ -117,52 +116,35 @@ export const TopBar: FC = () => {
   return (
     <TopBarWrapper>
       <WrapperInner>
-        <LeftTopSection ref={wrapperRef}>
+        <LeftTopSection>
           <MainLogo
-            src={process.env.PUBLIC_URL + "/assets/logo.png"}
-            alt="img"
-          ></MainLogo>
-          <HomeContainer onClick={toggleDropdown}>
-            <img
-              src={process.env.PUBLIC_URL + "/assets/icons/house.svg"}
-              alt="img"
-            />
+            src={process.env.PUBLIC_URL + "/assets/logo.png"} alt="img">
+            </MainLogo>
+          <HomeContainer ref={wrapperRef} onClick={toggleDropdown}>
+            <img src={process.env.PUBLIC_URL + "/assets/icons/house.svg"} alt="img"/>
             <p>Home</p>
             <HomeInner>
-              <img
-                src={process.env.PUBLIC_URL + "/assets/icons/arrow-down.svg"}
-                alt=""
-              />
+              <img src={process.env.PUBLIC_URL + "/assets/icons/arrow-down.svg"} alt=""/>
             </HomeInner>
-            {dropdownOpen && <>{<ExpandedMenu />}</>}
+            {dropdownOpen && <>
+            <ExpandedMenu />
+            </>}
           </HomeContainer>
         </LeftTopSection>
         <CenterTopSection>
           <SearchContainer>
-            <SearchComponent placeholder="Search"></SearchComponent>
-            <SearchIcone
-              src={process.env.PUBLIC_URL + "/assets/icons/search.svg"}
-              alt="img"
-            ></SearchIcone>
+            <SearchComponent placeholder="Search Legalcluster..."></SearchComponent>
+            <SearchIcone src={process.env.PUBLIC_URL + "/assets/icons/search.svg"} alt="img"></SearchIcone>
           </SearchContainer>
         </CenterTopSection>
         <RightTopSection>
           <RightIconsContainer>
-            <img
-              src={process.env.PUBLIC_URL + "/assets/icons/house2.svg"}
-              alt=""
-            />
+            <img src={process.env.PUBLIC_URL + "/assets/icons/house2.svg"} alt=""/>
             <IconsBackground>
-              <img
-                src={process.env.PUBLIC_URL + "/assets/icons/comments.svg"}
-                alt=""
-              />
+              <img src={process.env.PUBLIC_URL + "/assets/icons/comments.svg"} alt=""/>
             </IconsBackground>
             <IconsBackground>
-              <img
-                src={process.env.PUBLIC_URL + "/assets/icons/bell.svg"}
-                alt=""
-              />
+              <img src={process.env.PUBLIC_URL + "/assets/icons/bell.svg"} alt=""/>
             </IconsBackground>
           </RightIconsContainer>
         </RightTopSection>
