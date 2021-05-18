@@ -1,42 +1,42 @@
-import React from 'react';
 import { FC } from 'react'
 import '../LeftMenu/LeftMenu';
 import styled from 'styled-components'
-import {Colors} from '../../StyledHelpers/Colors';
-
 
 const LeftWrapper = styled.div`
-width: 15%;
+display: flex;
+width: 18%;
+flex-direction: column;
+align-items: flex-start;
 height: 900px;
-@media (min-width: 768px) {
-  width: 20%;
+/* background-color: red; */
+@media (min-width: 790px) {
+  width: 24%;
   height: 900px; 
 }
 
 `;
 
 const LeftMenuWrapper = styled.div`
-width: 100%;
-height: 400px;
-margin: 10px;
-background-color: ${Colors.white};
+width: 85%;
+height: 23%;
+margin-top: 15px;
+margin-left: 15px;
+background-color: white;
 box-shadow: 0px 2px 3px #999;
-  z-index: 999;
-@media (min-width: 768px) {
+z-index: 1;
+@media (min-width: 790px) {
   width: 85%;
   height: auto; 
+  box-shadow: 0px 2px 3px #999;
 }
 `;
 
 const LeftInnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
-height: auto;
 width: auto;
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   display: flex;
-  width: 100%;
-  height: auto;
 }
 `;
 
@@ -48,18 +48,18 @@ width: auto;
 justify-content: center;
 align-items: center;
 background-color: white;
+margin: 12px;
 & > img {
-  margin: 10px;
-  width: 33%;
+  width: 25%;
   height: auto;
   border-radius: 50%;
 }
 & > p {
   text-align: center;
   font-family: Helvetica;
-  color: #c9c9c9;
+  color: #bbbbbb;
+  font-weight: bold;
   font-size: 10px;
-  margin-bottom: 5px;
 }
 `;
 
@@ -67,7 +67,7 @@ const ProfileName = styled.div`
 width: auto;
 height: auto;
 & > h1 {
-  margin-bottom: 10px;
+  margin: 10px;
   text-align: center;
   font-weight: bold;
   font-size: 13px;
@@ -81,7 +81,7 @@ display: flex;
 flex-direction: column;
 height: auto;
 width: auto;
-padding: 5px;
+padding: 10px;
 background-color: white;
 justify-content: center;
 align-items: center;
@@ -92,33 +92,91 @@ border-width: 1px;
 
 const LeftLowerInner = styled.div`
 display: flex;
-width: 100%;
+width: 90%;
 align-items: center;
-& > img {
-  float: right;
-}
 `;
 
 
-const LeftLowerImage = styled.div`
-display: flex;
-& > img {
-}
-`;
 
 const LeftLowerDiv = styled.div`
 display: flex;
 align-items: center;
-justify-content: flex-start;
-& > label {
+width: 100%;
+height: auto;
+justify-content: space-between;
+margin-top: 5px;
+& > img {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  width: 15px;
+  margin-left: 5px;
+  
+}
+`;
+
+const LeftLowDiv = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+& > p {
   text-align: center;
   font-family: Helvetica;
+  font-weight: bold;
   color: #4d4d4d;
-  font-size: 13px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+& > img {
+  width: 22px;
+}
+@media (min-width: 1280px) {
+  & > p {
+  font-size: 14px;
+  }
+}
+`;
+
+const UnderLeftWrapper = styled.div`
+display: flex;
+flex-direction: column;
+margin-top: 15px;
+margin-left: 15px;
+width: 85%;
+height: auto;
+`;
+
+const UnderLeftDiv = styled.div`
+display: flex;
+flex-direction: column;
+height: auto;
+width: 78%;
+padding: 10px;
+align-items: center;
+`;
+
+const UnderLeftContent = styled.div`
+display: flex;
+align-items: center;
+width: 100%;
+margin-left: 15px;
+padding: 8px;
+& > img {
+  width: 13%;
+  height: auto;
+}
+& > p {
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #4d4d4d;
+  font-size: 15px;
   margin-left: 15px;
 }
-
 `;
+
+
+
 
 
 
@@ -129,34 +187,50 @@ export const LeftMenu: FC = () => {
         <LeftMenuWrapper>
           <LeftInnerWrapper>
             <LeftUpperSection>
-              <img src={process.env.PUBLIC_URL + "/assets/Profilowe.png"} alt=""/>
+              <img src="/assets/Profilowe.png" alt=""/>
               <ProfileName>
-              <h1>Mateusz Serafin</h1>
+                <h1>Mateusz Serafin</h1>
               </ProfileName>
-              <p>Trener Personalny - My Fitness Place</p>
+              <p>Job Title - Company</p>
             </LeftUpperSection>
             <LeftLowerSection>
               <LeftLowerInner>
                 <LeftLowerDiv>
-              <img src={process.env.PUBLIC_URL + "/assets/icons/network.png"} alt=""/>
-              <label>Your network</label>
+                  <LeftLowDiv>
+                  <img src="/assets/icons/network.png" alt=""/>
+                  <p>Your Network</p>
+                  </LeftLowDiv>
+              <img src="/assets/icons/follower.png" alt=""/>
                 </LeftLowerDiv>
-                <LeftLowerImage>
-                <img src={process.env.PUBLIC_URL + "/assets/icons/plus.png"} alt=""/>
-                </LeftLowerImage>
               </LeftLowerInner>
               <LeftLowerInner>
                 <LeftLowerDiv>
-                <img src={process.env.PUBLIC_URL + "/assets/icons/network.png"} alt=""/>
-                <label>Your Publications</label>
+                  <LeftLowDiv>
+                  <img src="/assets/icons/document.svg" alt=""/>
+                  <p>Your Publications</p>
+                  </LeftLowDiv>
+                <img src="/assets/icons/plus.png" alt=""/>
                 </LeftLowerDiv>
-                <LeftLowerImage>
-                <img src={process.env.PUBLIC_URL + "/assets/icons/plus.png"} alt=""/>
-                </LeftLowerImage>
               </LeftLowerInner>
             </LeftLowerSection>
-          </LeftInnerWrapper> 
+          </LeftInnerWrapper>
         </LeftMenuWrapper>
+        <UnderLeftWrapper>
+            <UnderLeftDiv>
+              <UnderLeftContent>
+              <img src="/assets/icons/document.svg" alt=""/>
+              <p>Publications</p>
+              </UnderLeftContent>
+              <UnderLeftContent>
+              <img src="/assets/icons/ecosystem.png" alt=""/>
+              <p>Ecosystem</p>
+              </UnderLeftContent>
+              <UnderLeftContent>
+              <img src="/assets/icons/entities2.png" alt=""/>
+              <p>Entities</p>
+              </UnderLeftContent>
+            </UnderLeftDiv>
+        </UnderLeftWrapper>
         </LeftWrapper>
         </> 
       );

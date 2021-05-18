@@ -1,27 +1,43 @@
-import React from 'react';
 import { FC } from 'react';
 import LeftMenu from '../LeftMenu/LeftMenu';
 import styled from 'styled-components'
 import TopBar from '../TopBar/TopBar';
-// import PersonalCard from '../PersonalCard/PersonalCard';
+import {Colors} from '../../StyledHelpers/Colors';
+import Workspace from '../Workspace/Workspace';
+  
 
-const MainBackground = styled.div`
-background-color: #f5f7f9;
-width: auto;
-height: 900px;
+
+
+const Main = styled.div`
+background-color: ${Colors.mainbackground};
+width: 100%;
+height: auto;
 `;
+
+const MainWrapper = styled.div`
+display: flex;
+flex-direction: row;
+width: auto;
+height: auto;
+`;
+
+
+
 
 const MainPage: FC = () => {
     
 
     return (
-        <MainBackground>
         <>
+        <Main>
             <TopBar/>
-            {/* <PersonalCard/> */}
+            <MainWrapper>
             <LeftMenu/>
+            <Workspace/>
+            </MainWrapper>
+        </Main>
         </>
-        </MainBackground>
+        
     )
 }
 

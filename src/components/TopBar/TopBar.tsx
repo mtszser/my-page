@@ -6,11 +6,12 @@ import ExpandedMenu from '../TopBar/ExpandedMenu';
 import useDropdown from 'react-dropdown-hook';
 
 const TopBarWrapper = styled(Wrapper)`
-  width: 100%;
-  height: auto;
-  background-color: ${Colors.white};
-  box-shadow: 0px 1px 10px #999;
-  z-index: 999;
+ display: flex;
+ width: auto;
+ height: 10%;
+ background-color: ${Colors.niceblue};
+ box-shadow: 0px 1px 10px #999;
+ z-index: 999;
 `;
 
 const WrapperInner = styled.div`
@@ -29,6 +30,7 @@ const LeftTopSection = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+
 
 const CenterTopSection = styled.div`
   width: 50%;
@@ -58,6 +60,14 @@ const HomeContainer = styled.div`
   cursor: pointer;
   & > img {
     margin-right: 10px;
+    margin-left: 5px;
+  }
+  &:hover {
+  background-color: ${Colors.nicebutton};
+  border-radius: 40px;
+  }
+  & > p {
+    font-family: Helvetica;
   }
 `;
 
@@ -90,17 +100,45 @@ const SearchIcone = styled.img`
 const RightIconsContainer = styled.div`
   display: flex;
   & > img {
+    cursor: pointer;
+    padding: 8px;
+  }
+  & >img:hover{
+    background-color: ${Colors.nicebuttonhover};
+    border-radius: 70px;
   }
 `;
 
 const IconsBackground = styled.div`
-  background-color: #d4d4d4;
-  width: 40px;
-  height: 40px;
-  border-radius: 70px;
-  margin-left: 10px;
+position: relative;
+background-color: ${Colors.nicebutton};
+width: 40px;
+height: 40px;
+align-items: center;
+border-radius: 70px;
+margin-left: 10px;
+cursor: pointer;
   & > img {
-    padding: 8px;
+    padding: 9px;
+  }
+  & > img:hover {
+  background-color: ${Colors.nicebuttonhover};
+  border-radius: 70px;
+  
+  }
+  &::after {
+    display: flex;
+    justify-content: center;
+    background-color: #86c1f1;
+    align-items: center;
+    position: absolute;
+    content: "69";
+    font-size: 12px;
+    height: 15px;
+    width: 25px;
+    top: -2px;
+    left: 24px;
+    border-radius: 69px;
   }
 `;
 
@@ -110,7 +148,7 @@ export const TopBar: FC = () => {
     wrapperRef, 
     dropdownOpen, 
     toggleDropdown, 
-    // closeDropdown
+    // closeDropdown,
   ] = useDropdown();
 
   return (
@@ -118,33 +156,36 @@ export const TopBar: FC = () => {
       <WrapperInner>
         <LeftTopSection>
           <MainLogo
-            src={process.env.PUBLIC_URL + "/assets/logo.png"} alt="img">
+            src= "/assets/logo.png" alt="img">
             </MainLogo>
           <HomeContainer ref={wrapperRef} onClick={toggleDropdown}>
-            <img src={process.env.PUBLIC_URL + "/assets/icons/house.svg"} alt="img"/>
+            <img src="/assets/icons/house.svg" alt="img"/>
             <p>Home</p>
             <HomeInner>
-              <img src={process.env.PUBLIC_URL + "/assets/icons/arrow-down.svg"} alt=""/>
+              <img src="/assets/icons/arrow-down.svg" alt=""/>
             </HomeInner>
-            {dropdownOpen && <>
-            <ExpandedMenu />
-            </>}
+            {dropdownOpen && 
+            <>
+            <ExpandedMenu> 
+            </ExpandedMenu>
+            </>
+            }
           </HomeContainer>
         </LeftTopSection>
         <CenterTopSection>
           <SearchContainer>
             <SearchComponent placeholder="Search Legalcluster..."></SearchComponent>
-            <SearchIcone src={process.env.PUBLIC_URL + "/assets/icons/search.svg"} alt="img"></SearchIcone>
+            <SearchIcone src="/assets/icons/search.svg" alt="img"></SearchIcone>
           </SearchContainer>
         </CenterTopSection>
         <RightTopSection>
           <RightIconsContainer>
-            <img src={process.env.PUBLIC_URL + "/assets/icons/house2.svg"} alt=""/>
+            <img src="/assets/icons/house2.svg" alt=""/>
             <IconsBackground>
-              <img src={process.env.PUBLIC_URL + "/assets/icons/comments.svg"} alt=""/>
+              <img src="/assets/icons/comments.svg" alt=""/>
             </IconsBackground>
             <IconsBackground>
-              <img src={process.env.PUBLIC_URL + "/assets/icons/bell.svg"} alt=""/>
+              <img src="/assets/icons/bell.svg" alt=""/>
             </IconsBackground>
           </RightIconsContainer>
         </RightTopSection>
