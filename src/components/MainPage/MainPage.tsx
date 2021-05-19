@@ -3,21 +3,30 @@ import LeftMenu from '../LeftMenu/LeftMenu';
 import styled from 'styled-components'
 import TopBar from '../TopBar/TopBar';
 import {Colors} from '../../StyledHelpers/Colors';
-import Workspace from '../Workspace/Workspace';
+import Publications from '../MainContent/Publications';
+import Workspaces from '../MainContent/Workspaces';
+import ResumeWork from '../MainContent/ResumeWork';
   
 
 
 
 const Main = styled.div`
 background-color: ${Colors.mainbackground};
-width: 100%;
+width: auto;
 height: auto;
 `;
 
 const MainWrapper = styled.div`
 display: flex;
 flex-direction: row;
-width: auto;
+width: 100%;
+height: auto;
+`;
+
+const MainContent = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
 height: auto;
 `;
 
@@ -33,7 +42,11 @@ const MainPage: FC = () => {
             <TopBar/>
             <MainWrapper>
             <LeftMenu/>
-            <Workspace/>
+            <MainContent>
+            <Publications/>
+            <Workspaces/>
+            <ResumeWork/>
+            </MainContent>
             </MainWrapper>
         </Main>
         </>

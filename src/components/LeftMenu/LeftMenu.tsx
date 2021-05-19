@@ -11,7 +11,7 @@ height: 900px;
 /* background-color: red; */
 @media (min-width: 790px) {
   width: 24%;
-  height: 900px; 
+  height: auto 
 }
 
 `;
@@ -119,6 +119,7 @@ const LeftLowDiv = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
+cursor: pointer;
 & > p {
   text-align: center;
   font-family: Helvetica;
@@ -142,7 +143,7 @@ display: flex;
 flex-direction: column;
 margin-top: 15px;
 margin-left: 15px;
-width: 85%;
+width: 80%;
 height: auto;
 `;
 
@@ -161,8 +162,9 @@ align-items: center;
 width: 100%;
 margin-left: 15px;
 padding: 8px;
+cursor: pointer;
 & > img {
-  width: 13%;
+  width: 11%;
   height: auto;
 }
 & > p {
@@ -174,10 +176,6 @@ padding: 8px;
   margin-left: 15px;
 }
 `;
-
-
-
-
 
 
 export const LeftMenu: FC = () => {

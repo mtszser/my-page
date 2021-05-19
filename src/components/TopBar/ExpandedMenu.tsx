@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 import {Colors} from '../../StyledHelpers/Colors';
-import SearchBar from '../TopBar/SearchBar';
+// import SearchBar from '../TopBar/SearchBar';
 
 
 const ExpandedMenuContainer = styled.ul`
@@ -159,6 +159,41 @@ opacity:0.5;
 
 
 export const ExpandedMenu: FC = () => {
+
+// 	const menuFilter: string[]= ["Home", "Publications", "People", "Entities", "Administration", "Client contract",
+// "Supplier contract", "Corporate", "Group Norms", "Real estate contracts", "Privacy", "Settings"]
+
+
+// const PlatformData = [
+// {
+// 	title: "Home",
+// 	path: "#",
+// 	icon: "/assets/icons/house.svg",
+// },
+// {
+// 	title: "Publications",
+// 	path: "#",
+// 	icon: "/assets/icons/document.svg",
+// },
+// {
+// 	title: "People",
+// 	path: "#",
+// 	icon: "/assets/icons/people.svg",
+// },
+// {
+// 	title: "Entities",
+// 	path: "#",
+// 	icon: "/assets/icons/entities.svg",
+// },
+// {
+// 	title: "Administration",
+// 	path: "#",
+// 	icon: "/assets/icons/administration.svg",
+// },
+// ];
+
+
+
 	return (
         <ExpandedMenuContainer onClick={(e) => e.stopPropagation()}>
 			<ExpandedMenuFilter type="text" id="searchInput" placeholder="Filter..."></ExpandedMenuFilter>

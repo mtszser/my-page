@@ -2,10 +2,9 @@ import { FC } from "react";
 import styled from "styled-components";
 
 
-const WorkspaceWrapper = styled.div`
+const PublicationsWrapper = styled.div`
 display: flex;
-justify-content: row;
-width: 100%;
+width: auto;
 height: auto;
 padding: 15px;
 `;
@@ -13,7 +12,7 @@ padding: 15px;
 const MainContentWrapper = styled.div`
 display: flex;
 flex-direction: column;
-width: 95%;
+width: 93%; 
 height: auto;
 `;
 
@@ -132,10 +131,10 @@ margin-left: 5px;
 
 
 
-export const Workspace: FC = () => {
+export const Publications: FC = () => {
     return (
       <>
-        <WorkspaceWrapper>
+        <PublicationsWrapper>
             <MainContentWrapper>
                 <MainContentHeader>
                     <PublicationsDiv>
@@ -187,8 +186,8 @@ export const Workspace: FC = () => {
 
                 </MainContentHeader>
             </MainContentWrapper>
-        </WorkspaceWrapper>
+        </PublicationsWrapper>
       </>
     );
   };
-  export default Workspace;
+  export default Publications;
