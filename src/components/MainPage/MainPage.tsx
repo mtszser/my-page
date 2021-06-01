@@ -5,7 +5,7 @@ import TopBar from '../TopBar/TopBar';
 import {Colors} from '../../StyledHelpers/Colors';
 import Publications from '../MainContent/Publications';
 import Workspaces from '../MainContent/Workspaces';
-import ResumeWork from '../MainContent/ResumeWork';
+import ResumeWork from '../MainContent/ResumeWorks';
   
 
 

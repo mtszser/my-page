@@ -5,5 +5,6 @@ export const Colors = {
     niceblue: '#f3f9fc;',
     nicehover: '#e2f2fa;',
     nicebutton: '#d5ebf7',
-    nicebuttonhover: `#aae3ff`
+    nicebuttonhover: `#aae3ff`,
+    MenuFontColor: `#003152`
 }

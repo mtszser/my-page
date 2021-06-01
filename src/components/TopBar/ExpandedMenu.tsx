@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styled from 'styled-components'
 import {Colors} from '../../StyledHelpers/Colors';
-// import SearchBar from '../TopBar/SearchBar';
+
 
 
 const ExpandedMenuContainer = styled.ul`
@@ -20,110 +20,187 @@ background-color: ${Colors.niceblue};
 height: auto;
 width: 100%;
 top: 36px;
+& > input {
+	width: 90%;
+	height: 20px;
+	font-size: 13px;
+}
 @media (min-width: 768px) {
 	width: 100%;
 }
-`;
 
-
-
-const ExpandedMenuFilter = styled.input`
-text-align: left;
-padding: 5px;
-margin-top: 5px;
-border: 1px solid #dedede;
-border-radius: 5px;
-width: 86%;
-@media (min-width: 1205px) {
-	width: 90%;
-}
 `;
 
 const ExpandedMenuWrapper = styled.div`
 display: flex;
 flex-direction: column;
 width: 95%;
-height: 10%;
+height: auto;
 background-color: ${Colors.niceblue};
 overflow:scroll;
 overflow-x:hidden;
-`
-const ExpandedMenuPlatform = styled.div`
-width: 95%;
-height: auto;
-background-color: ${Colors.niceblue};
-justify-content: center;
-align-items: center;
-color: #5e5e5e;
-text-align: left;
 `;
 
-
-const ExpandedMenuHeader = styled.div`
-display: flex;
-text-align: left;
-margin-top: 5px;
-margin-bottom: 5px;
-& > h1 {
-	color: #5e5e5e;
-	font-size: 13px;
-	font-family: Helvetica;
-}
-`;
-
-const ExpandedMenuContent = styled.div`
-display: flex;
-width: 100%;
-align-items: center;
-& > p {
-	margin-left: 10px;
-	color: #04002c;
-	font-size: 16px;
-	font-family: Helvetica;
-}
-&:hover{
-	background-color: ${Colors.nicebutton};
-}
-`;
-
-const ExpandedMenuDiv = styled.div`
+const PlatformDiv = styled.div`
 display: flex;
 flex-direction: column;
+width: 100%;
 height: auto;
+& > span {
+	font-size: 15px;
+	font-style: bold;
+	font-family: Helvetica;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+& > ul {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 90%;
+	height: 27px;
+	cursor: pointer;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+& > ul:hover {
+	background-color: ${Colors.nicehover};
+	width: auto;
+}
+& > ul > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+	
+}
+& > ul > img {
+	width: 25px;
+}
 `;
 
-const ExpandedMenuIcon = styled.div`
+const WorkspaceDiv = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+height: auto;
+& > span {
+	font-size: 15px;
+	font-style: bold;
+	font-family: Helvetica;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+& > ul {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 90%;
+	height: 27px;
+	cursor: pointer;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+& > ul:hover {
+	background-color: ${Colors.nicehover};
+	width: auto;
+}
+& > ul > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+}
+& > ul > img {
+	width: 25px;
+}
+`;
+
+
+const AccountDiv = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+height: auto;
+border-style: solid;
+border-width: 1px 0;
+border-color: #c9c9c9;
+& > div {
+	display: flex;
+	align-items: center;
 & > img {
-height: 25px;
-width: 25px;
-padding: 2px;
+	width: 32px;
 }
-& > p {
-display: flex
+& > span {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+}
+}
+& > span {
+	font-size: 15px;
+	font-style: bold;
+	font-family: Helvetica;
+	margin-top: 3px;
+	margin-bottom: 8px;
+}
+& > ul {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 90%;
+	height: 27px;
+	cursor: pointer;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+& > ul:hover {
+	background-color: ${Colors.nicehover};
+	width: auto;
+}
+& > ul > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+}
+& > ul > img {
+	width: 25px;
+}
+& > :hover {
+	background-color: ${Colors.nicehover};
+	width: auto;
 }
 `;
 
-const ExpandedMenuWorkspaces = styled.div`
-width: 95%;
-height: auto;
-background-color: ${Colors.niceblue};
-justify-content: center;
-align-items: center;
-color: #5e5e5e;
-text-align: left;
-`;
-
-const ExpandedMenuAccount = styled.div`
-width: 95%;
-height: auto;
-background-color: ${Colors.niceblue};
-justify-content: center;
-align-items: center;
-color: #5e5e5e;
-text-align: left;
-margin-bottom: 10px;
-border-top: 1px solid #9e9e9e;
-border-bottom: 1px solid #9e9e9e;
+const AccountSeeProfile = styled.div`
+display: flex;
+flex-direction: column;
+& > img {
+	width: auto;
+}
+& > span {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	color: black;
+	font-family: sans-serif;
+}
+& > a {
+	margin-left: 10px;
+	font-size: 14px;
+	text-decoration: none;
+	color: ${Colors.MenuFontColor};
+	margin-top: 3px;
+}
+& > a:visited {
+	margin-left: 10px;
+	font-size: 14px;
+	text-decoration: none;
+	color: ${Colors.MenuFontColor};
+	margin-top: 3px;
+}
 `;
 
 const LogoutDiv = styled.div`
@@ -139,13 +216,13 @@ opacity:0.5;
 &:hover {
 	opacity:0.9;
 }
-& > p {
+& > span {
 	font-size: 16px;
 	color: #5e5e5e;
 	font-family: Helvetica;
 	
 }
-& > p:hover {
+& > span:hover {
 	font-style: bold;
 	font-size: 19px;
 	font-family: Helvetica;
@@ -156,165 +233,125 @@ opacity:0.5;
 }
 `;
 
+const PlatformInfo = [
+{
+	title: "Home",
+	path: "#",
+	icon: "/assets/icons/house.svg",
+},
+{
+	title: "Publications",
+	path: "#",
+	icon: "/assets/icons/document.svg",
+},
+{
+	title: "People",
+	path: "#",
+	icon: "/assets/icons/people.svg",
+},
+{
+	title: "Entities",
+	path: "#",
+	icon: "/assets/icons/entities.svg",
+},
+{
+	title: "Administration",
+	path: "#",
+	icon: "/assets/icons/administration.svg",
+},
+];
 
+const WorkspacesInfo = [
+	{
+	  title: "Client contract",
+	  path: "#",
+	  icon: `./assets/icons/contract.svg`,
+	},
+	{
+	  title: "Supplier contract",
+	  path: "#",
+	  icon: `./assets/icons/contract.svg`,
+	},
+	{
+	  title: "Corporate",
+	  path: "#",
+	  icon: `./assets/icons/entities2.svg`,
+	},
+	{
+	  title: "Group Norms",
+	  path: "#",
+	  icon: `./assets/icons/agenda.svg`,
+	},
+	{
+	  title: "Real estate contracts",
+	  path: "#",
+	  icon: `./assets/icons/contract.svg`,
+	},
+  ];
+
+  const AccountInfo = [
+	{
+	  title: "Privacy",
+	  path: "#",
+	  icon: `./assets/icons/privacy.svg`,
+	},
+	{
+	  title: "Settings",
+	  path: "#",
+	  icon: `./assets/icons/settings.svg`,
+	},
+  ];
 
 export const ExpandedMenu: FC = () => {
 
-// 	const menuFilter: string[]= ["Home", "Publications", "People", "Entities", "Administration", "Client contract",
-// "Supplier contract", "Corporate", "Group Norms", "Real estate contracts", "Privacy", "Settings"]
-
-
-// const PlatformData = [
-// {
-// 	title: "Home",
-// 	path: "#",
-// 	icon: "/assets/icons/house.svg",
-// },
-// {
-// 	title: "Publications",
-// 	path: "#",
-// 	icon: "/assets/icons/document.svg",
-// },
-// {
-// 	title: "People",
-// 	path: "#",
-// 	icon: "/assets/icons/people.svg",
-// },
-// {
-// 	title: "Entities",
-// 	path: "#",
-// 	icon: "/assets/icons/entities.svg",
-// },
-// {
-// 	title: "Administration",
-// 	path: "#",
-// 	icon: "/assets/icons/administration.svg",
-// },
-// ];
-
-
+	const [search, setSearch] = useState("");
 
 	return (
         <ExpandedMenuContainer onClick={(e) => e.stopPropagation()}>
-			<ExpandedMenuFilter type="text" id="searchInput" placeholder="Filter..."></ExpandedMenuFilter>
+			<input placeholder="Search.." type="text" onChange={(e) => setSearch(e.target.value.toLowerCase())}/>
 			<ExpandedMenuWrapper>
-			<ExpandedMenuPlatform>
-				<ExpandedMenuHeader>
-				<h1>Platform</h1>
-				</ExpandedMenuHeader>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/house.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Home</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/document.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Publications</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/people.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>People</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/entities.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Entities</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/administration.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Administration</p>
-				</ExpandedMenuContent>
-			</ExpandedMenuPlatform>
-			<ExpandedMenuWorkspaces>
-			<ExpandedMenuHeader>
-			<h1>Workspaces </h1>
-			</ExpandedMenuHeader>
-			<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/contract.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Client contract</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/contract.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Supplier contract</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/entities.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Corporate</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/house.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Group Norms</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/contract.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Real estate contracts</p>
-				</ExpandedMenuContent>
-			</ExpandedMenuWorkspaces>
+				<PlatformDiv>
+					<span>Platform</span>
+					{PlatformInfo.filter((elem) =>
+					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
+						<ul key={index}>
+							<img src={elem.icon} alt=""></img>
+							<li>{elem.title}</li>
+						</ul>
+					))}
+				</PlatformDiv>
+				<WorkspaceDiv>
+					<span>Workspaces</span>
+					{WorkspacesInfo.filter((elem) =>
+					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
+						<ul key={index}>
+							<img src={elem.icon} alt=""></img>
+							<li>{elem.title}</li>
+						</ul>
+					))}
+				</WorkspaceDiv>
+				<AccountDiv>
+				<span>Account</span>
+				<div>
+				<img src="./assets/profile.svg" alt="" />
+				<AccountSeeProfile>
+				<span>EL Random Name</span>
+				<a href="/">See Profile</a>
+				</AccountSeeProfile>
+				</div>
+					{AccountInfo.filter((elem) =>
+					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
+						<ul key={index}>
+							<img src={elem.icon} alt=""></img>
+							<li>{elem.title}</li>
+						</ul>
+					))}
+				</AccountDiv>
 			</ExpandedMenuWrapper>
-			<ExpandedMenuAccount>
-			<ExpandedMenuHeader>
-			<h1>Account</h1>
-			</ExpandedMenuHeader>
-			<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/privacy.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Privacy</p>
-				</ExpandedMenuContent>
-				<ExpandedMenuContent>
-					<ExpandedMenuDiv>
-					<ExpandedMenuIcon>
-					<img src="/assets/icons/settings.svg" alt=""/>
-					</ExpandedMenuIcon>
-					</ExpandedMenuDiv>
-					<p>Settings</p>
-				</ExpandedMenuContent>
-			</ExpandedMenuAccount>
 			<LogoutDiv>
 			<img src="/assets/icons/logout.png" alt=""/>
-				<p>Logout</p>
+			<span>Logout</span>
 			</LogoutDiv>
-
 		</ExpandedMenuContainer>
     )
 }
