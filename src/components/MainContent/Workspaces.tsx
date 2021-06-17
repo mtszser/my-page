@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-// import Carousel from 'react-elastic-carousel'
+import Carousel from 'react-elastic-carousel'
 import Workspace from '../MainContent/Workspace';
 
 
@@ -59,14 +59,15 @@ export const Workspaces: FC = () => {
     return (
 
       <Wrapper>
-      {/* <Carousel isRTL={false} itemsToShow={4} showArrows={false} itemPosition={"START"} pagination={false}> */}
+      <Carousel isRTL={false} itemsToShow={4} showArrows={false} itemPosition={"START"} pagination={true}>
         <Workspace>1</Workspace>
         <Workspace>2</Workspace>
         <Workspace>3</Workspace>
         <Workspace>4</Workspace>
         <Workspace>5</Workspace>
         <Workspace>6</Workspace>
-      {/* </Carousel> */}
+        
+      </Carousel>
     </Wrapper>
 
 
@@ -74,11 +75,11 @@ export const Workspaces: FC = () => {
       // <>
       //   <WorkspacesWrapper>
       //       <MainContentWrapper>
-                // <WorkspacesHeader>
-                //     <HeaderDiv>
-                //     <h1>Workspaces</h1>
-                //     </HeaderDiv>
-                // </WorkspacesHeader>
+      //           <WorkspacesHeader>
+      //               <HeaderDiv>
+      //               <h1>Workspaces</h1>
+      //               </HeaderDiv>
+      //           </WorkspacesHeader>
       //           <PublicationsDiv>
 
       //           </PublicationsDiv>

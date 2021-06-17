@@ -1,10 +1,11 @@
 import { FC, useState } from 'react'
 import styled from 'styled-components'
 import {Colors} from '../../StyledHelpers/Colors';
+import { NavLink } from 'react-router-dom';
 
 
 
-const ExpandedMenuContainer = styled.ul`
+const ExpandedMenuContainer = styled.ul`	
 display: flex;
 z-index: 2;
 flex-direction: column;
@@ -62,6 +63,23 @@ height: auto;
 	cursor: pointer;
 	margin-top: 6px;
 	margin-bottom: 6px;
+	& > .navStyle {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	align-items: center;
+	text-decoration: none;
+	& > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+	}
+	& > img {
+		width: 25px;
+	}
+	}
 }
 & > ul:hover {
 	background-color: ${Colors.nicehover};
@@ -78,6 +96,8 @@ height: auto;
 	width: 25px;
 }
 `;
+
+
 
 const WorkspaceDiv = styled.div`
 display: flex;
@@ -100,6 +120,23 @@ height: auto;
 	cursor: pointer;
 	margin-top: 6px;
 	margin-bottom: 6px;
+	& > .navStyle {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	align-items: center;
+	text-decoration: none;
+	& > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+	}
+	& > img {
+		width: 25px;
+	}
+	}
 }
 & > ul:hover {
 	background-color: ${Colors.nicehover};
@@ -154,6 +191,23 @@ border-color: #c9c9c9;
 	cursor: pointer;
 	margin-top: 6px;
 	margin-bottom: 6px;
+	& > .navStyle {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	align-items: center;
+	text-decoration: none;
+	& > li {
+	margin-left: 10px;
+	color: ${Colors.MenuFontColor};
+	font-size: 16px;
+	font-family: sans-serif;
+	}
+	& > img {
+		width: 25px;
+	}
+	}
 }
 & > ul:hover {
 	background-color: ${Colors.nicehover};
@@ -203,6 +257,8 @@ flex-direction: column;
 }
 `;
 
+
+
 const LogoutDiv = styled.div`
 display: flex;
 width: 90%;
@@ -213,6 +269,17 @@ align-items: center;
 margin-bottom: 10px;
 cursor: pointer;
 opacity:0.5;
+& > .logoutStyle {
+	font-size: 16px;
+	color: #5e5e5e;
+	font-family: Helvetica;
+	&:hover {
+		font-style: bold;
+	font-size: 19px;
+	font-family: Helvetica;
+	color: ${Colors.black};
+}
+}
 &:hover {
 	opacity:0.9;
 }
@@ -236,27 +303,27 @@ opacity:0.5;
 const PlatformInfo = [
 {
 	title: "Home",
-	path: "#",
+	path: "/",
 	icon: "/assets/icons/house.svg",
 },
 {
 	title: "Publications",
-	path: "#",
+	path: "/",
 	icon: "/assets/icons/document.svg",
 },
 {
 	title: "People",
-	path: "#",
+	path: "/routingsite",
 	icon: "/assets/icons/people.svg",
 },
 {
 	title: "Entities",
-	path: "#",
+	path: "/routingsite",
 	icon: "/assets/icons/entities.svg",
 },
 {
 	title: "Administration",
-	path: "#",
+	path: "/",
 	icon: "/assets/icons/administration.svg",
 },
 ];
@@ -264,27 +331,27 @@ const PlatformInfo = [
 const WorkspacesInfo = [
 	{
 	  title: "Client contract",
-	  path: "#",
+	  path: "/routingsite",
 	  icon: `./assets/icons/contract.svg`,
 	},
 	{
 	  title: "Supplier contract",
-	  path: "#",
+	  path: "/",
 	  icon: `./assets/icons/contract.svg`,
 	},
 	{
 	  title: "Corporate",
-	  path: "#",
+	  path: "/routingsite",
 	  icon: `./assets/icons/entities2.svg`,
 	},
 	{
 	  title: "Group Norms",
-	  path: "#",
+	  path: "/",
 	  icon: `./assets/icons/agenda.svg`,
 	},
 	{
 	  title: "Real estate contracts",
-	  path: "#",
+	  path: "/routingsite",
 	  icon: `./assets/icons/contract.svg`,
 	},
   ];
@@ -292,12 +359,12 @@ const WorkspacesInfo = [
   const AccountInfo = [
 	{
 	  title: "Privacy",
-	  path: "#",
+	  path: "/routingsite",
 	  icon: `./assets/icons/privacy.svg`,
 	},
 	{
 	  title: "Settings",
-	  path: "#",
+	  path: "/",
 	  icon: `./assets/icons/settings.svg`,
 	},
   ];
@@ -313,10 +380,12 @@ export const ExpandedMenu: FC = () => {
 				<PlatformDiv>
 					<span>Platform</span>
 					{PlatformInfo.filter((elem) =>
-					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
+					elem.title.toLowerCase().includes(search,)).map((elem, index) =>(
 						<ul key={index}>
+							<NavLink to={elem.path} className="navStyle">
 							<img src={elem.icon} alt=""></img>
 							<li>{elem.title}</li>
+							</NavLink>
 						</ul>
 					))}
 				</PlatformDiv>
@@ -325,8 +394,10 @@ export const ExpandedMenu: FC = () => {
 					{WorkspacesInfo.filter((elem) =>
 					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
 						<ul key={index}>
+							<NavLink to={elem.path} className="navStyle">
 							<img src={elem.icon} alt=""></img>
 							<li>{elem.title}</li>
+							</NavLink>
 						</ul>
 					))}
 				</WorkspaceDiv>
@@ -335,22 +406,24 @@ export const ExpandedMenu: FC = () => {
 				<div>
 				<img src="./assets/profile.svg" alt="" />
 				<AccountSeeProfile>
-				<span>EL Random Name</span>
-				<a href="/">See Profile</a>
+				<span>Jean-Marie Li</span>
+				<NavLink to="/profile">See Profile</NavLink>
 				</AccountSeeProfile>
 				</div>
 					{AccountInfo.filter((elem) =>
 					elem.title.toLowerCase().includes(search)).map((elem, index) =>(
 						<ul key={index}>
+							<NavLink to={elem.path} className="navStyle">
 							<img src={elem.icon} alt=""></img>
 							<li>{elem.title}</li>
+							</NavLink>
 						</ul>
 					))}
 				</AccountDiv>
 			</ExpandedMenuWrapper>
 			<LogoutDiv>
 			<img src="/assets/icons/logout.png" alt=""/>
-			<span>Logout</span>
+			<NavLink to="/" className="logoutStyle">Logout</NavLink>
 			</LogoutDiv>
 		</ExpandedMenuContainer>
     )

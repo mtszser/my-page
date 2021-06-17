@@ -1,6 +1,82 @@
 import { FC } from "react";
-// import styled from "styled-components";
-// import {Colors} from '../../StyledHelpers/Colors';
+import styled from "styled-components";
+import {Colors} from '../../StyledHelpers/Colors';
+
+
+
+// const WorkspaceInfo = [
+//   {
+//     title: "Client Contract",
+//     img: "./assets/icons/contract.svg",
+//     userimg: "",
+//     users: "",
+//     lastupdate: "Last update 2 days ago"
+//   },
+//   {
+//     title: "Supplier Contract",
+//     img: "./assets/icons/contract.svg",
+//     userimg: "",
+//     users: "",
+//     lastupdate: "Last update 2 days ago"
+//   },
+//   {
+//     title: "Corporate",
+//     img: "./assets/icons/entities2.svg",
+//     userimg: "",
+//     users: "",
+//     lastupdate: "Last update 2 days ago"
+//   },
+//   {
+//     title: "Group Norms",
+//     img: "./assets/icons/agenda.svg",
+//     userimg: "",
+//     users: "",
+//     lastupdate: "Last update 2 days ago"
+//   },
+//   {
+//     title: "Real Estate Contracts",
+//     img: "./assets/icons/contract.svg",
+//     userimg: "",
+//     users: "",
+//     lastupdate: "Last update 2 days ago"
+//   },
+//   ];
+
+
+const WorkspaceWrapper = styled.div`
+display: flex;
+flex-direction: column;
+width: auto;
+height: auto;
+padding: 15px;
+& > h1 {
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #4d4d4d;
+    font-size: 18px;
+    margin-left: 10px;
+}
+`;
+
+const WorkspaceInnerWrapper = styled.div`
+display: flex;
+height: 200px;
+width: 260px;
+background-color: ${Colors.niceblue};
+box-shadow: 0px 2px 3px #999;
+margin-bottom: 20px;
+`;
+
+
+const WorkspaceImg = styled.div`
+background-image: url("./assets/photos/contractman.jpg");
+background-size: auto;
+display: flex;
+background-repeat: no-repeat;
+width: 100%;
+height: 50%;
+`;
+
 
 
 // const Card = styled.div`
@@ -57,30 +133,11 @@ import { FC } from "react";
 export const WorkspaceCard: FC = () => {
   return (
     <>
-
-
-
-
-    
-      {/* <Card>
-        <CardInnerImg><img src="./assets/icons/entities.png" alt="" /></CardInnerImg>
-        <CardImg></CardImg>
-        <Content>
-          <div>
-            <p>Client contract</p>
-          </div>
-          
-          <span>
-            <img src="./assets/icons/people.png" alt="" />
-            Contract -
-            <img src="./assets/icons/people.png" alt="" />
-            150 users
-          </span>
-
-          <span>Last update 3 days ago</span>
-
-        </Content>
-      </Card> */}
+    <WorkspaceWrapper>
+    <WorkspaceInnerWrapper>
+      <WorkspaceImg></WorkspaceImg>
+    </WorkspaceInnerWrapper>
+    </WorkspaceWrapper> 
     </>
   );
 };

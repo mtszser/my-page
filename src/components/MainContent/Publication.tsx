@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from 'react';
 import styled from "styled-components";
+
 
 
 
@@ -75,17 +76,71 @@ margin-left: 5px;
 }
 `;
 
+type Publication = {
+    userId: number;
+    id: number;
+    body: string;
+    title: string;
+}
+
 
 
 
 export const Publication: FC = () => {
+
+    const [apiPub, setApi] = useState<Publication>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/posts/6")
+        .then(res=>res.json())
+        .then(json=>setApi(json))
+     }, [])
+
+     const [apiPub1, setApi1] = useState<Publication>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/posts/9")
+        .then(res=>res.json())
+        .then(json=>setApi1(json))
+     }, [])
+
+     const [apiPub2, setApi2] = useState<Publication>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(res=>res.json())
+        .then(json=>setApi2(json))
+     }, [])
+
+
+
+
     return (
       <>
                 <PublicationsContent>
                     <ContentDIV>
                         <img src='/assets/photos/guywriting.jpg' alt="guy"></img>
                         <AuthorDataProfile>
-                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit... and one more line for the demo donna mamma es hueczita </h1>
+                            <h1>{apiPub?.body}</h1>
+                            <AuthorData>
+                                <p>7 jan. 2020</p>
+                                <img src='/assets/photos/JohnDoe.jpg' alt="guy"></img>
+                                <span>John Doe</span>
+                            </AuthorData>
+                        </AuthorDataProfile>
+                    </ContentDIV>
+                    <ContentDIV>
+                        <img src='/assets/photos/guywriting.jpg' alt="guy"></img>
+                        <AuthorDataProfile>
+                            <h1>{apiPub1?.body}</h1>
+                            <AuthorData>
+                                <p>7 jan. 2020</p>
+                                <img src='/assets/photos/JohnDoe.jpg' alt="guy"></img>
+                                <span>John Doe</span>
+                            </AuthorData>
+                        </AuthorDataProfile>
+                    </ContentDIV>
+                    <ContentDIV>
+                        <img src='/assets/photos/guywriting.jpg' alt="guy"></img>
+                        <AuthorDataProfile>
+                            <h1>{apiPub2?.body}</h1>
                             <AuthorData>
                                 <p>7 jan. 2020</p>
                                 <img src='/assets/photos/JohnDoe.jpg' alt="guy"></img>

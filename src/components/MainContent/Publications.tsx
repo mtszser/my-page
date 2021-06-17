@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from 'react';
 import styled from "styled-components";
 import Publication from './Publication';
 // import {Colors} from '../../StyledHelpers/Colors';
@@ -29,21 +29,19 @@ width: 100%;
 
 const PublicationsInner = styled.div`
 display: flex;
-width: 100%;
+width: auto;
 height: auto;
 box-shadow: 0px 2px 3px #999;
 & > img {
-    width: 320px;
-    height: 320px;
-    position: relative;
-    box-shadow: inset 2px 2px 12px black;
+    width: 350px;
+    height: 350px;
 }
 & > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 320px;
+    height: 100%;
     background-color: white;
     width: 100%;
     & > span {
@@ -72,25 +70,46 @@ box-shadow: 0px 2px 3px #999;
 }
 `;
 
-fetch('https://jsonplaceholder.typicode.com/users/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
+// const LeftImage = styled.div`
+// background-image: url("/assets/photos/skyscraper.jpg");
+// display: flex;
+// background-size: 350px 350px;
+// box-shadow: inset 0px -174px 69px -41px #000c4499;
+// & > p {
+//     margin-left: 10px;
+//     margin-right: 45px;
+//     color: whitesmoke;
+// }
+// `;
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users/1')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
 
 
 
 
 export const Publications: FC = () => {
+
+    // const [apiPub, setApi] = useState<Publication>()
+    // useEffect(()=> {
+    //     fetch("https://jsonplaceholder.typicode.com/posts/6")
+    //     .then(res=>res.json())
+    //     .then(json=>setApi(json))
+    //  }, [])
+
+
     return (
-        <>
             <PublicationsWrapper>
                 <MainContentWrapper>
                     <MainContentHeader>
                         <PublicationsInner>
-                            <img src='/assets/photos/skyscraper.jpg' alt='skyscraper'></img>
+                            <img src="/assets/photos/skyscraper.jpg" alt="32132"></img>
+                            {/* <LeftImage><p>{apiPub?.body}</p></LeftImage> */}
                             <div>
                                 <h1>Latest publications</h1>
-                                <Publication />
-                                <Publication />
                                 <Publication />
                                 <span>See more publications</span>
                             </div>
@@ -98,7 +117,6 @@ export const Publications: FC = () => {
                     </MainContentHeader>
                 </MainContentWrapper>
             </PublicationsWrapper>
-        </>
     );
 };
 export default Publications;
