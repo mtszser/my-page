@@ -6,6 +6,7 @@ import {Colors} from '../../StyledHelpers/Colors';
 import MainContent from '../MainContent/MainContent';
 import RoutingSite from '../RoutingSite/RoutingSite';
 import Profile from '../PersonalProfile/Profile';
+import WorkspacePage from '../WorkspacePage/WorkspacePage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
   
 
@@ -42,6 +43,7 @@ const MainPage: FC = () => {
                     <Route path="/" exact component={MainContent}/>
                     <Route path="/routingsite" component={RoutingSite}/>
                     <Route path="/profile" component={Profile}/>
+                    <Route path="/workspaces" component={WorkspacePage}/>
                     </Switch>
                 </MainWrapper>
             </Main>

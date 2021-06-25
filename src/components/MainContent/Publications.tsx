@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import styled from "styled-components";
 import Publication from './Publication';
+import { NavLink } from 'react-router-dom';
 // import {Colors} from '../../StyledHelpers/Colors';
 
 
@@ -44,7 +45,7 @@ box-shadow: 0px 2px 3px #999;
     height: 100%;
     background-color: white;
     width: 100%;
-    & > span {
+    & > .publicStyle {
     width: 95%;
     height: 20px;
     text-align: left;
@@ -55,8 +56,9 @@ box-shadow: 0px 2px 3px #999;
     color: #5353cc;
     font-size: 13px;
     cursor: pointer;
+    text-decoration: none;
     }
-    & > h1 {
+    & > .h1Style {
     width: 95%;
     height: 20px;
     text-align: left;
@@ -66,6 +68,7 @@ box-shadow: 0px 2px 3px #999;
     color: #4d4d4d;
     font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
     }
 }
 `;
@@ -109,9 +112,9 @@ export const Publications: FC = () => {
                             <img src="/assets/photos/skyscraper.jpg" alt="32132"></img>
                             {/* <LeftImage><p>{apiPub?.body}</p></LeftImage> */}
                             <div>
-                                <h1>Latest publications</h1>
+                                <NavLink to="/routingsite" className="h1Style"><h1>Latest publications</h1></NavLink>
                                 <Publication />
-                                <span>See more publications</span>
+                                <NavLink to="/routingsite" className="publicStyle"><span>See more publications</span></NavLink>
                             </div>
                         </PublicationsInner>
                     </MainContentHeader>

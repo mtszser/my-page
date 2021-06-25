@@ -115,7 +115,7 @@ box-shadow: 0px 2px 3px #999;
 `;
 
 const WorkHeader = styled.div`
-width: 20%;
+width: 50%;
 height: auto;
 & > h1 {
     font-family: Helvetica;
@@ -166,11 +166,18 @@ align-items: center;
     font-family: Helvetica;
     color: #7a7a7a;
 }
-
 `;
 
+type PostType = {
+    id: string,
+    name: string,
+    body: string,
+}
 
-
+type UserType = {
+    id: string,
+    name: string
+}
 
 export const ResumeWork: FC = () => {
 
@@ -182,6 +189,24 @@ export const ResumeWork: FC = () => {
         // closeDropdown,
       ] = useDropdown();
 
+
+      
+
+      const [apiPost, setApiPost] = useState<PostType>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/comments/2")
+        .then(res=>res.json())
+        .then(json=>setApiPost(json))
+        .then(json => console.log(json))
+     }, [])
+
+     const [apiUser, setApiUser] = useState<UserType>()
+     useEffect(()=> {
+         fetch("https://jsonplaceholder.typicode.com/users/1")
+         .then(res=>res.json())
+         .then(json=>setApiUser(json))
+         .then(json => console.log(json))
+      }, [])
 
     return (
         <ResumeWorkWrapper>
@@ -217,14 +242,10 @@ export const ResumeWork: FC = () => {
                 </ResumeWorkHeader>
                 <ResumeWorkDiv>
                     <WorkHeader>
-                        <h1>World Company SAS</h1>
+                        <h1>{apiPost?.name}</h1>
                     </WorkHeader>
                     <WorkContent>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Curabitur ut aliquet ipsum, eget rhoncus ex. Ut vel 
-                            tellus feugiat, consequat tortor in, posuere elit.
-                            Suspendisse non placerat orci. Donec consectetur feugiat odio,
-                             at tristique purus lobortis vitae.</p>
+                        <p>{apiPost?.body}</p>
                     </WorkContent>
                     <WorkAuthors>
                     <img src='/assets/icons/podcast.svg' alt="podcast"></img>
@@ -233,19 +254,15 @@ export const ResumeWork: FC = () => {
                     <img src='/assets/icons/entities.svg' alt="podcast"></img>
                     <p>Corporate</p>
                     <img id="dot" src='/assets/icons/dot.svg' alt="dot"></img>
-                    <span>Updated 3 days ago by John Doe</span>
+                    <span>Updated 3 days ago by {apiUser?.name}</span>
                     </WorkAuthors>
                     </ResumeWorkDiv>
                     <ResumeWorkDiv>
                     <WorkHeader>
-                        <h1>World Company SAS</h1>
+                    <h1>{apiPost?.name}</h1>
                     </WorkHeader>
                     <WorkContent>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Curabitur ut aliquet ipsum, eget rhoncus ex. Ut vel 
-                            tellus feugiat, consequat tortor in, posuere elit.
-                            Suspendisse non placerat orci. Donec consectetur feugiat odio,
-                             at tristique purus lobortis vitae.</p>
+                    <p>{apiPost?.body}</p>
                     </WorkContent>
                     <WorkAuthors>
                     <img src='/assets/icons/podcast.svg' alt="podcast"></img>
@@ -254,7 +271,7 @@ export const ResumeWork: FC = () => {
                     <img src='/assets/icons/entities.svg' alt="podcast"></img>
                     <p>Corporate</p>
                     <img id="dot" src='/assets/icons/dot.svg' alt="dot"></img>
-                    <span>Updated 3 days ago by John Doe</span>
+                    <span>Updated 3 days ago by {apiUser?.name}</span>
                     </WorkAuthors>
                     </ResumeWorkDiv>
                     <ResumeWorkDiv>

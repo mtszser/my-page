@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components'
 import {Colors} from '../../StyledHelpers/Colors';
 import { NavLink } from 'react-router-dom';
@@ -167,6 +167,7 @@ border-color: #c9c9c9;
 	align-items: center;
 & > img {
 	width: 32px;
+	border-radius: 50%;
 }
 & > span {
 	margin-left: 10px;
@@ -369,9 +370,23 @@ const WorkspacesInfo = [
 	},
   ];
 
+
+  type UserProfileType = {
+    name: string;
+}
+
 export const ExpandedMenu: FC = () => {
 
 	const [search, setSearch] = useState("");
+
+
+	const [apiProfile, setApiProfile] = useState<UserProfileType>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+        .then(res=>res.json())
+        .then(json=>setApiProfile(json))
+        .then(json => console.log(json))
+     }, [])
 
 	return (
         <ExpandedMenuContainer onClick={(e) => e.stopPropagation()}>
@@ -404,9 +419,9 @@ export const ExpandedMenu: FC = () => {
 				<AccountDiv>
 				<span>Account</span>
 				<div>
-				<img src="./assets/profile.svg" alt="" />
+				<img src="./assets/Profilowe.png" alt="" />
 				<AccountSeeProfile>
-				<span>Jean-Marie Li</span>
+				<span>{apiProfile?.name}</span>
 				<NavLink to="/profile">See Profile</NavLink>
 				</AccountSeeProfile>
 				</div>

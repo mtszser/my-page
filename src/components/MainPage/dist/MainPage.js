@@ -11,6 +11,7 @@ var Colors_1 = require("../../StyledHelpers/Colors");
 var MainContent_1 = require("../MainContent/MainContent");
 var RoutingSite_1 = require("../RoutingSite/RoutingSite");
 var Profile_1 = require("../PersonalProfile/Profile");
+var WorkspacePage_1 = require("../WorkspacePage/WorkspacePage");
 var react_router_dom_1 = require("react-router-dom");
 var Main = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nbackground-color: ", ";\nwidth: auto;\nheight: auto;\n"], ["\nbackground-color: ", ";\nwidth: auto;\nheight: auto;\n"])), Colors_1.Colors.mainbackground);
 var MainWrapper = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: row;\nwidth: 100%;\nheight: auto;\n"], ["\ndisplay: flex;\nflex-direction: row;\nwidth: 100%;\nheight: auto;\n"])));
@@ -23,7 +24,8 @@ var MainPage = function () {
                 React.createElement(react_router_dom_1.Switch, null,
                     React.createElement(react_router_dom_1.Route, { path: "/", exact: true, component: MainContent_1["default"] }),
                     React.createElement(react_router_dom_1.Route, { path: "/routingsite", component: RoutingSite_1["default"] }),
-                    React.createElement(react_router_dom_1.Route, { path: "/profile", component: Profile_1["default"] }))))));
+                    React.createElement(react_router_dom_1.Route, { path: "/profile", component: Profile_1["default"] }),
+                    React.createElement(react_router_dom_1.Route, { path: "/workspaces", component: WorkspacePage_1["default"] }))))));
 };
 exports["default"] = MainPage;
 var templateObject_1, templateObject_2;

@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import '../LeftMenu/LeftMenu';
 import styled from 'styled-components'
+import UserProfile from '../UserProfile/UserProfile';
+import { NavLink } from 'react-router-dom';
 
 const LeftWrapper = styled.div`
 display: flex;
@@ -21,58 +23,32 @@ width: 85%;
 height: 23%;
 margin-top: 15px;
 margin-left: 15px;
+margin-right: 15px;
 background-color: white;
 box-shadow: 0px 2px 3px #999;
 z-index: 1;
 @media (min-width: 790px) {
-  width: 85%;
+  width: auto;
   height: auto; 
   box-shadow: 0px 2px 3px #999;
 }
 `;
 
+const LeftProfileDiv = styled.div`
+display: flex;
+flex-direction: column;
+height: auto;
+width: auto;
+max-width: 320px;
+background-color: wheat;
+`;
 const LeftInnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
 width: auto;
-@media (min-width: 790px) {
-  display: flex;
-}
-`;
-
-const LeftUpperSection = styled.div`
-display: flex;
-flex-direction: column;
-height: auto;
-width: auto;
-justify-content: center;
-align-items: center;
 background-color: white;
-margin: 12px;
-& > img {
-  width: 25%;
-  height: auto;
-  border-radius: 50%;
-}
-& > p {
-  text-align: center;
-  font-family: Helvetica;
-  color: #bbbbbb;
-  font-weight: bold;
-  font-size: 10px;
-}
-`;
-
-const ProfileName = styled.div`
-width: auto;
-height: auto;
-& > h1 {
-  margin: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 13px;
-  font-family: Helvetica;
-  color: #5353cc;
+@media (min-width: 256px) {
+  display: flex;
 }
 `;
 
@@ -120,13 +96,14 @@ display: flex;
 align-items: center;
 justify-content: center;
 cursor: pointer;
-& > p {
+& > .pStyle {
   text-align: center;
   font-family: Helvetica;
   font-weight: bold;
   color: #4d4d4d;
-  font-size: 10px;
+  font-size: 12px;
   margin-left: 10px;
+  text-decoration: none;
 }
 & > img {
   width: 22px;
@@ -183,20 +160,16 @@ export const LeftMenu: FC = () => {
         <>
         <LeftWrapper>
         <LeftMenuWrapper>
+          <LeftProfileDiv>
           <LeftInnerWrapper>
-            <LeftUpperSection>
-              <img src="/assets/Profilowe.png" alt=""/>
-              <ProfileName>
-                <h1>Mateusz Serafin</h1>
-              </ProfileName>
-              <p>Job Title - Company</p>
-            </LeftUpperSection>
+            <UserProfile>
+            </UserProfile>
             <LeftLowerSection>
               <LeftLowerInner>
                 <LeftLowerDiv>
                   <LeftLowDiv>
                   <img src="/assets/icons/network.png" alt=""/>
-                  <p>Your Network</p>
+                  <NavLink to="/routingsite" className="pStyle"><p>Your Network</p></NavLink>
                   </LeftLowDiv>
               <img src="/assets/icons/follower.png" alt=""/>
                 </LeftLowerDiv>
@@ -205,13 +178,14 @@ export const LeftMenu: FC = () => {
                 <LeftLowerDiv>
                   <LeftLowDiv>
                   <img src="/assets/icons/document.svg" alt=""/>
-                  <p>Your Publications</p>
+                  <NavLink to="/routingsite" className="pStyle"><p>Your Publications</p></NavLink>
                   </LeftLowDiv>
                 <img src="/assets/icons/plus.png" alt=""/>
                 </LeftLowerDiv>
               </LeftLowerInner>
             </LeftLowerSection>
           </LeftInnerWrapper>
+          </LeftProfileDiv>
         </LeftMenuWrapper>
         <UnderLeftWrapper>
             <UnderLeftDiv>

@@ -49,22 +49,15 @@ flex-direction: column;
 width: auto;
 height: auto;
 padding: 15px;
-& > h1 {
-    font-family: Helvetica;
-    font-weight: bold;
-    color: #4d4d4d;
-    font-size: 18px;
-    margin-left: 10px;
-}
 `;
 
 const WorkspaceInnerWrapper = styled.div`
 display: flex;
 height: 200px;
 width: 260px;
+flex-direction: column;
 background-color: ${Colors.niceblue};
 box-shadow: 0px 2px 3px #999;
-margin-bottom: 20px;
 `;
 
 
@@ -77,6 +70,58 @@ width: 100%;
 height: 50%;
 `;
 
+const WorkspaceDiv = styled.div`
+display: flex;
+width: 100%;
+height: 50%;
+justify-content: center;
+text-align: center;
+& > div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+}
+`;
+
+const WorskspaceDivContent = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+height: auto;
+`;
+
+const ContentHeader = styled.div`
+display: flex;
+height: auto;
+width: 100%;
+justify-content: center;
+& > h1 {
+  font-size: 18px;
+  margin-left: 50px;
+}
+`;
+
+const ContentText = styled.div`
+display: flex;
+height: auto;
+width: auto;
+flex-direction: column;
+& > p {
+  text-align: left;
+  padding: 10px;
+}
+& > div {
+  height: auto;
+  width: auto;
+  & > p {
+    text-align: left;
+    margin-left: 10px;
+
+  }
+}
+`;
 
 
 // const Card = styled.div`
@@ -98,44 +143,29 @@ height: 50%;
 //   height: 45%;
 // `;
 
-// const Content = styled.div`
-// height: 55%;
-//   padding: 10px;
-//   div {
-//     height: 60%;
-//     p { 
-//       margin-left: 40%;
-//     }
-//   }
-//   span { 
-//     display: flex;
-//     gap: 15px;
-//   }
-// `;
 
-// const CardInnerImg = styled.div`
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   left: 10px;
-//   top: 75px;
-//   height: 100px;
-//   width: 100px;
-//   border-radius: 2px;
-//   background-color: #fff;
-//   box-shadow: black;
-//     img { 
-//       width: 50px;
-//     }
-// `;
 
 export const WorkspaceCard: FC = () => {
   return (
     <>
     <WorkspaceWrapper>
     <WorkspaceInnerWrapper>
-      <WorkspaceImg></WorkspaceImg>
+      <WorkspaceImg/>
+      <WorkspaceDiv>
+        <WorskspaceDivContent>
+          <ContentHeader>
+            <h1> Client Contract</h1>
+          </ContentHeader>
+          <ContentText>
+            <p>Contract * 150 users</p>
+            <div>
+              <p>Last update 2 days ago.</p>
+            </div>
+          </ContentText>
+
+
+        </WorskspaceDivContent>
+      </WorkspaceDiv>
     </WorkspaceInnerWrapper>
     </WorkspaceWrapper> 
     </>

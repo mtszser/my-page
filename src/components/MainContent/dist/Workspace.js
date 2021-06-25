@@ -44,9 +44,13 @@ var Colors_1 = require("../../StyledHelpers/Colors");
 //     lastupdate: "Last update 2 days ago"
 //   },
 //   ];
-var WorkspaceWrapper = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: auto;\nheight: auto;\npadding: 15px;\n& > h1 {\n    font-family: Helvetica;\n    font-weight: bold;\n    color: #4d4d4d;\n    font-size: 18px;\n    margin-left: 10px;\n}\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: auto;\nheight: auto;\npadding: 15px;\n& > h1 {\n    font-family: Helvetica;\n    font-weight: bold;\n    color: #4d4d4d;\n    font-size: 18px;\n    margin-left: 10px;\n}\n"])));
-var WorkspaceInnerWrapper = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\ndisplay: flex;\nheight: 200px;\nwidth: 260px;\nbackground-color: ", ";\nbox-shadow: 0px 2px 3px #999;\nmargin-bottom: 20px;\n"], ["\ndisplay: flex;\nheight: 200px;\nwidth: 260px;\nbackground-color: ", ";\nbox-shadow: 0px 2px 3px #999;\nmargin-bottom: 20px;\n"])), Colors_1.Colors.niceblue);
+var WorkspaceWrapper = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: auto;\nheight: auto;\npadding: 15px;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: auto;\nheight: auto;\npadding: 15px;\n"])));
+var WorkspaceInnerWrapper = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\ndisplay: flex;\nheight: 200px;\nwidth: 260px;\nflex-direction: column;\nbackground-color: ", ";\nbox-shadow: 0px 2px 3px #999;\n"], ["\ndisplay: flex;\nheight: 200px;\nwidth: 260px;\nflex-direction: column;\nbackground-color: ", ";\nbox-shadow: 0px 2px 3px #999;\n"])), Colors_1.Colors.niceblue);
 var WorkspaceImg = styled_components_1["default"].div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\nbackground-image: url(\"./assets/photos/contractman.jpg\");\nbackground-size: auto;\ndisplay: flex;\nbackground-repeat: no-repeat;\nwidth: 100%;\nheight: 50%;\n"], ["\nbackground-image: url(\"./assets/photos/contractman.jpg\");\nbackground-size: auto;\ndisplay: flex;\nbackground-repeat: no-repeat;\nwidth: 100%;\nheight: 50%;\n"])));
+var WorkspaceDiv = styled_components_1["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 50%;\njustify-content: center;\ntext-align: center;\n& > div {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  height: auto;\n}\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 50%;\njustify-content: center;\ntext-align: center;\n& > div {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  height: auto;\n}\n"])));
+var WorskspaceDivContent = styled_components_1["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nwidth: 100%;\nheight: auto;\n"], ["\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nwidth: 100%;\nheight: auto;\n"])));
+var ContentHeader = styled_components_1["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: 100%;\njustify-content: center;\n& > h1 {\n  font-size: 18px;\n  margin-left: 50px;\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: 100%;\njustify-content: center;\n& > h1 {\n  font-size: 18px;\n  margin-left: 50px;\n}\n"])));
+var ContentText = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n\n  }\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n\n  }\n}\n"])));
 // const Card = styled.div`
 // position: relative;
 //   height: 250px;
@@ -64,41 +68,19 @@ var WorkspaceImg = styled_components_1["default"].div(templateObject_3 || (templ
 //   background-size: cover;
 //   height: 45%;
 // `;
-// const Content = styled.div`
-// height: 55%;
-//   padding: 10px;
-//   div {
-//     height: 60%;
-//     p { 
-//       margin-left: 40%;
-//     }
-//   }
-//   span { 
-//     display: flex;
-//     gap: 15px;
-//   }
-// `;
-// const CardInnerImg = styled.div`
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   left: 10px;
-//   top: 75px;
-//   height: 100px;
-//   width: 100px;
-//   border-radius: 2px;
-//   background-color: #fff;
-//   box-shadow: black;
-//     img { 
-//       width: 50px;
-//     }
-// `;
 exports.WorkspaceCard = function () {
     return (React.createElement(React.Fragment, null,
         React.createElement(WorkspaceWrapper, null,
             React.createElement(WorkspaceInnerWrapper, null,
-                React.createElement(WorkspaceImg, null)))));
+                React.createElement(WorkspaceImg, null),
+                React.createElement(WorkspaceDiv, null,
+                    React.createElement(WorskspaceDivContent, null,
+                        React.createElement(ContentHeader, null,
+                            React.createElement("h1", null, " Client Contract")),
+                        React.createElement(ContentText, null,
+                            React.createElement("p", null, "Contract * 150 users"),
+                            React.createElement("div", null,
+                                React.createElement("p", null, "Last update 2 days ago.")))))))));
 };
 exports["default"] = exports.WorkspaceCard;
-var templateObject_1, templateObject_2, templateObject_3;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;
