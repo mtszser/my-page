@@ -46,27 +46,27 @@ var PlatformInfo = [
 var WorkspacesInfo = [
     {
         title: "Client contract",
-        path: "/routingsite",
+        path: "/workspaces",
         icon: "./assets/icons/contract.svg"
     },
     {
         title: "Supplier contract",
-        path: "/",
+        path: "/workspaces",
         icon: "./assets/icons/contract.svg"
     },
     {
         title: "Corporate",
-        path: "/routingsite",
+        path: "/workspaces",
         icon: "./assets/icons/entities2.svg"
     },
     {
         title: "Group Norms",
-        path: "/",
+        path: "/workspaces",
         icon: "./assets/icons/agenda.svg"
     },
     {
         title: "Real estate contracts",
-        path: "/routingsite",
+        path: "/workspaces",
         icon: "./assets/icons/contract.svg"
     },
 ];
