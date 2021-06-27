@@ -50,24 +50,8 @@ var WorkspaceImg = styled_components_1["default"].div(templateObject_3 || (templ
 var WorkspaceDiv = styled_components_1["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 50%;\njustify-content: center;\ntext-align: center;\n& > div {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  height: auto;\n}\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 50%;\njustify-content: center;\ntext-align: center;\n& > div {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  height: auto;\n}\n"])));
 var WorskspaceDivContent = styled_components_1["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nwidth: 100%;\nheight: auto;\n"], ["\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nwidth: 100%;\nheight: auto;\n"])));
 var ContentHeader = styled_components_1["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: 100%;\njustify-content: center;\n& > h1 {\n  font-size: 18px;\n  margin-left: 50px;\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: 100%;\njustify-content: center;\n& > h1 {\n  font-size: 18px;\n  margin-left: 50px;\n}\n"])));
-var ContentText = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n\n  }\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n\n  }\n}\n"])));
-// const Card = styled.div`
-// position: relative;
-//   height: 250px;
-//   width: 350px;
-//   border-radius: 1px;
-//   border: solid;
-//   border-color: ${Colors.black};
-//   background-color: ${Colors.niceblue};
-//   overflow: hidden;
-// `;
-// const CardImg = styled.div`
-//   background-image: url("./assets/images/img1.jpg");
-//   background-repeat: no-repeat;
-//   background-position: 50% 50%;
-//   background-size: cover;
-//   height: 45%;
-// `;
+var ContentText = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\ndisplay: flex;\nposition: relative;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n    font-size: 12px;\n    color: grey;\n\n  }\n}\n"], ["\ndisplay: flex;\nposition: relative;\nheight: auto;\nwidth: auto;\nflex-direction: column;\n& > p {\n  text-align: left;\n  padding: 10px;\n}\n& > div {\n  height: auto;\n  width: auto;\n  & > p {\n    text-align: left;\n    margin-left: 10px;\n    font-size: 12px;\n    color: grey;\n\n  }\n}\n"])));
+var CardInnerImg = styled_components_1["default"].div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  left: 25px;\n  top: 75px;\n  height: 80px;\n  width: 80px;\n  border-radius: 5px;\n  background-color: #fff;\n  background-image: url(\"./assets/profile.png\");\n  background-repeat: no-repeat;\n  img {\n    width: 70px;\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  left: 25px;\n  top: 75px;\n  height: 80px;\n  width: 80px;\n  border-radius: 5px;\n  background-color: #fff;\n  background-image: url(\"./assets/profile.png\");\n  background-repeat: no-repeat;\n  img {\n    width: 70px;\n  }\n"])));
 exports.WorkspaceCard = function () {
     return (React.createElement(React.Fragment, null,
         React.createElement(WorkspaceWrapper, null,
@@ -76,6 +60,8 @@ exports.WorkspaceCard = function () {
                 React.createElement(WorkspaceDiv, null,
                     React.createElement(WorskspaceDivContent, null,
                         React.createElement(ContentHeader, null,
+                            React.createElement(CardInnerImg, null,
+                                React.createElement("img", { src: '/assets/icons/contract.svg', alt: "guy" })),
                             React.createElement("h1", null, " Client Contract")),
                         React.createElement(ContentText, null,
                             React.createElement("p", null, "Contract * 150 users"),
@@ -83,4 +69,4 @@ exports.WorkspaceCard = function () {
                                 React.createElement("p", null, "Last update 2 days ago.")))))))));
 };
 exports["default"] = exports.WorkspaceCard;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;

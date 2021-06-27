@@ -34,7 +34,7 @@ var PlatformInfo = [
     },
     {
         title: "Entities",
-        path: "/routingsite",
+        path: "/entities",
         icon: "/assets/icons/entities.svg"
     },
     {
