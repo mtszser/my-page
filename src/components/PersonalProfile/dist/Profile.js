@@ -7,32 +7,173 @@ exports.__esModule = true;
 exports.Profile = void 0;
 var styled_components_1 = require("styled-components");
 var ProfileInfo_1 = require("./ProfileInfo");
-var MainWrapper = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 90%;\nheight: auto;\nmargin-right: 20px;\nmargin-top: 20px;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 90%;\nheight: auto;\nmargin-right: 20px;\nmargin-top: 20px;\n"])));
-var ProfileWrapper = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\ndisplay: flex;\njustify-content: center;\nflex-direction: column;\nwidth: 45%;\nmargin: auto;\nheight: auto;\nbackground-color: white;\n"], ["\ndisplay: flex;\njustify-content: center;\nflex-direction: column;\nwidth: 45%;\nmargin: auto;\nheight: auto;\nbackground-color: white;\n"])));
-var ProfileNav = styled_components_1["default"].div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: 300px;\nalign-items: center;\njustify-content: space-around;\nbackground-color: blue;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: 300px;\nalign-items: center;\njustify-content: space-around;\nbackground-color: blue;\n"])));
-var ProfileNavWrapper = styled_components_1["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nalign-items: right;\nwidth: 95%;\nheight: 95%;\nbackground-color: wheat;\n"], ["\ndisplay: flex;\nflex-direction: column;\nalign-items: right;\nwidth: 95%;\nheight: 95%;\nbackground-color: wheat;\n"])));
-var ProfileNavButtons = styled_components_1["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nmargin-top: 10px;\nheight: auto;\njustify-content: flex-end;\nbackground-color: white;\nalign-items: center;\ntext-align: center;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nmargin-top: 10px;\nheight: auto;\njustify-content: flex-end;\nbackground-color: white;\nalign-items: center;\ntext-align: center;\n"])));
-var PanelInformations = styled_components_1["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: orange;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: orange;\n"])));
-var Proposals = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: green;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: green;\n"])));
-var InternalRevievs = styled_components_1["default"].div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: yellow;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: yellow;\n"])));
-var AmountOfFees = styled_components_1["default"].div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: blue;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: 200px;\nbackground-color: blue;\n"])));
-// const ProfileInfo = styled.div`
-// `;
+var Colors_1 = require("../../StyledHelpers/Colors");
+var MainWrapper = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 90%;\nheight: auto;\nmargin-right: 20px;\nmargin-top: 20px;\nmargin-bottom: 50px;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 90%;\nheight: auto;\nmargin-right: 20px;\nmargin-top: 20px;\nmargin-bottom: 50px;\n"])));
+var ProfileWrapper = styled_components_1["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\ndisplay: flex;\njustify-content: center;\nflex-direction: column;\nwidth: 45%;\nmargin: auto;\nheight: auto;\nbackground-color: white;\nborder-style: solid;\nborder-width: 1px;\nborder-color: #dddddd;\nbackground-color: ", ";\n"], ["\ndisplay: flex;\njustify-content: center;\nflex-direction: column;\nwidth: 45%;\nmargin: auto;\nheight: auto;\nbackground-color: white;\nborder-style: solid;\nborder-width: 1px;\nborder-color: #dddddd;\nbackground-color: ", ";\n"])), Colors_1.Colors.niceblue);
+var ProfileNav = styled_components_1["default"].div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nalign-items: center;\nmargin-bottom: 10px;\njustify-content: space-around;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nalign-items: center;\nmargin-bottom: 10px;\njustify-content: space-around;\n"])));
+var ProfileNavWrapper = styled_components_1["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nalign-items: right;\nwidth: 95%;\nheight: 95%;\n"], ["\ndisplay: flex;\nflex-direction: column;\nalign-items: right;\nwidth: 95%;\nheight: 95%;\n"])));
+var ProfileNavButtons = styled_components_1["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nmargin-top: 10px;\nheight: auto;\njustify-content: flex-end;\nbackground-color: ", ";\nalign-items: center;\ntext-align: center;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nmargin-top: 10px;\nheight: auto;\njustify-content: flex-end;\nbackground-color: ", ";\nalign-items: center;\ntext-align: center;\n"])), Colors_1.Colors.niceblue);
+var PanelInformations = styled_components_1["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nmargin-top: 5px;\nborder-color: #dddddd;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nmargin-top: 5px;\nborder-color: #dddddd;\n"])));
+var Proposals = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nborder-color: #dddddd;\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nborder-color: #dddddd;\n"])));
+var InternalRevievs = styled_components_1["default"].div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nborder-color: #dddddd;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: auto;\nborder-bottom: solid;\nborder-width: 1px;\nborder-color: #dddddd;\n"])));
+var AmountOfFees = styled_components_1["default"].div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\ndisplay: flex;\nwidth: 100%;\nheight: auto;\n"], ["\ndisplay: flex;\nwidth: 100%;\nheight: auto;\n"])));
+var ESACDiv = styled_components_1["default"].div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nheight: auto;\nwidth: 100%;\nborder-top: solid;\nborder-bottom: solid;\nborder-width: 1px;\nmargin-top: 5px;\nborder-color: #dddddd;\n"], ["\ndisplay: flex;\nflex-direction: column;\nheight: auto;\nwidth: 100%;\nborder-top: solid;\nborder-bottom: solid;\nborder-width: 1px;\nmargin-top: 5px;\nborder-color: #dddddd;\n"])));
+var Expertise = styled_components_1["default"].div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nmargin-top: 5px;\nmargin-bottom: 5px;\nflex-direction: column;\n& > h1 {\n    font-size: 15px;\n    color: gray;\n    margin-bottom: 5px;\n}\n& div > span {\n    background-color: #e2e2f7;\n    cursor: pointer;\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nmargin-top: 5px;\nmargin-bottom: 5px;\nflex-direction: column;\n& > h1 {\n    font-size: 15px;\n    color: gray;\n    margin-bottom: 5px;\n}\n& div > span {\n    background-color: #e2e2f7;\n    cursor: pointer;\n}\n"])));
+var Specialties = styled_components_1["default"].div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nflex-direction: column;\n& > h1 {\n    font-size: 15px;\n    color: gray;\n    margin-bottom: 5px;\n    margin-top: 5px;\n}\n& > div {\n    display: flex;\n}\n& div > span {\n    background-color: #e2e2f7;\n    cursor: pointer;\n}\n& > div > p {\n    background-color: #e2e2f7;\n    margin-left: 15px;\n    cursor: pointer;\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nflex-direction: column;\n& > h1 {\n    font-size: 15px;\n    color: gray;\n    margin-bottom: 5px;\n    margin-top: 5px;\n}\n& > div {\n    display: flex;\n}\n& div > span {\n    background-color: #e2e2f7;\n    cursor: pointer;\n}\n& > div > p {\n    background-color: #e2e2f7;\n    margin-left: 15px;\n    cursor: pointer;\n}\n"])));
+var PanelDiv = styled_components_1["default"].div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nflex-direction: column;\n& > h1 {\n    font-size: 18px;\n    color: black;\n    margin-bottom: 5px;\n    margin-top: 5px;\n}\n& > div {\n    display: flex;\n    flex-direction: column;\n}\n& div > span {\n    cursor: pointer;\n    font-size: 14px;\n}\n& > div > p {\n    cursor: pointer;\n    margin-top: 5px;\n    font-size: 14px;\n}\n& > div > div {\n    display: flex;\n    width: 90%;\n    height: auto;\n    background-color: #e2e2f7;\n    align-items: center;\n    cursor: pointer;\n    margin-bottom: 5px;\n    & > img {\n        height: 15px;\n        width: 15px;\n        margin-left: 10px;\n        margin-right: 10px;\n        \n    }\n    & .profilowe {\n        width: 30px;\n        height: 30px;\n        border-radius: 20px;\n        margin-right: 10px;\n        \n    }\n}\n"], ["\ndisplay: flex;\nheight: auto;\nwidth: auto;\nmargin-left: 10px;\nflex-direction: column;\n& > h1 {\n    font-size: 18px;\n    color: black;\n    margin-bottom: 5px;\n    margin-top: 5px;\n}\n& > div {\n    display: flex;\n    flex-direction: column;\n}\n& div > span {\n    cursor: pointer;\n    font-size: 14px;\n}\n& > div > p {\n    cursor: pointer;\n    margin-top: 5px;\n    font-size: 14px;\n}\n& > div > div {\n    display: flex;\n    width: 90%;\n    height: auto;\n    background-color: #e2e2f7;\n    align-items: center;\n    cursor: pointer;\n    margin-bottom: 5px;\n    & > img {\n        height: 15px;\n        width: 15px;\n        margin-left: 10px;\n        margin-right: 10px;\n        \n    }\n    & .profilowe {\n        width: 30px;\n        height: 30px;\n        border-radius: 20px;\n        margin-right: 10px;\n        \n    }\n}\n"])));
+var ProposalsDiv = styled_components_1["default"].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 95%;\nheight: auto;\nmargin-bottom: 5px;\n& > h1 {\n    font-size: 18px;\n    margin-left: 10px;\n    margin-top: 10px;\n    color: black;\n}\n& > div {\n    display: flex;\n    margin-top: 20px;\n    width: 90%;\n    justify-content: space-evenly;\n    \n\n}\n& > div > p {\n    font-size: 15px;\n    margin-left: 10px;\n    margin-right: 10px;\n\n}\n& > .divv {\n    font-size: 15px;\n}\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 95%;\nheight: auto;\nmargin-bottom: 5px;\n& > h1 {\n    font-size: 18px;\n    margin-left: 10px;\n    margin-top: 10px;\n    color: black;\n}\n& > div {\n    display: flex;\n    margin-top: 20px;\n    width: 90%;\n    justify-content: space-evenly;\n    \n\n}\n& > div > p {\n    font-size: 15px;\n    margin-left: 10px;\n    margin-right: 10px;\n\n}\n& > .divv {\n    font-size: 15px;\n}\n"])));
+var AmountOfFeesDiv = styled_components_1["default"].div(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nmargin-left: 10px;\nmargin-top: 10px;\n& > h1 {\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n& > div {\n    display: flex;\n    width: auto;\n    justify-content: space-evenly;\n    height: auto;\n}\n& > div > div {\n    display: flex;\n    flex-direction: column;\n    width: auto;\n    height: auto;\n    text-align: center;\n    & > h1 {\n        font-size: 18px;\n        color: black;\n    }\n    & > p {\n        font-size: 15px;\n        margin-top: 3px;\n    }\n\n}\n"], ["\ndisplay: flex;\nflex-direction: column;\nwidth: 100%;\nheight: auto;\nmargin-left: 10px;\nmargin-top: 10px;\n& > h1 {\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n& > div {\n    display: flex;\n    width: auto;\n    justify-content: space-evenly;\n    height: auto;\n}\n& > div > div {\n    display: flex;\n    flex-direction: column;\n    width: auto;\n    height: auto;\n    text-align: center;\n    & > h1 {\n        font-size: 18px;\n        color: black;\n    }\n    & > p {\n        font-size: 15px;\n        margin-top: 3px;\n    }\n\n}\n"])));
 exports.Profile = function () {
     return (React.createElement(MainWrapper, null,
         React.createElement(ProfileWrapper, null,
             React.createElement(ProfileNav, null,
                 React.createElement(ProfileNavWrapper, null,
                     React.createElement(ProfileNavButtons, null,
-                        React.createElement(ProfileInfo_1["default"], null)))),
+                        React.createElement(ProfileInfo_1["default"], null)),
+                    React.createElement(ESACDiv, null,
+                        React.createElement(Expertise, null,
+                            React.createElement("h1", null, "Expertise"),
+                            React.createElement("div", null,
+                                React.createElement("span", null, "Mergers and acsquisition"))),
+                        React.createElement(Specialties, null,
+                            React.createElement("h1", null, "Specialties"),
+                            React.createElement("div", null,
+                                React.createElement("span", null, "Cross border operation"),
+                                React.createElement("p", null, "Transaction over 500M\u20AC/$"))),
+                        React.createElement(Specialties, null,
+                            React.createElement("h1", null, "Amission"),
+                            React.createElement("div", null,
+                                React.createElement("span", null, "Paris bar association"),
+                                React.createElement("p", null, "Tunisian bar association/"))),
+                        React.createElement(Expertise, null,
+                            React.createElement("h1", null, "Counties"),
+                            React.createElement("div", null,
+                                React.createElement("span", null, "Tunisia")))))),
             React.createElement(PanelInformations, null,
-                React.createElement("p", null, "Panel Informations")),
+                React.createElement(PanelDiv, null,
+                    React.createElement("h1", null, "Panel Informations"),
+                    React.createElement("div", null,
+                        React.createElement("span", null, "Hourly fee"),
+                        React.createElement("p", null, "610\u20AC/hour (Negociated)"))),
+                React.createElement(PanelDiv, null,
+                    React.createElement("h1", null, "Terms & Conditions"),
+                    React.createElement("div", null,
+                        React.createElement("span", null, "Hourly fee"),
+                        React.createElement("p", null, "Monthly 10k\u20AC reainer - see with Jeanny Smith"),
+                        React.createElement("div", null,
+                            React.createElement("img", { src: "/assets/icons/contract.svg", alt: "" }),
+                            React.createElement("p", null, "Attachment_lorem-ipsum25425.jpg")))),
+                React.createElement(PanelDiv, null,
+                    React.createElement("h1", null, "Services $ projects"),
+                    React.createElement("div", null,
+                        React.createElement("span", null, "Corporate M&A and international acquisitions"))),
+                React.createElement(PanelDiv, null,
+                    React.createElement("h1", null, "Internal correspondants"),
+                    React.createElement("div", null,
+                        React.createElement("div", null,
+                            React.createElement("img", { className: "profilowe", src: "/assets/Profilowe.png", alt: "" }),
+                            React.createElement("p", null, "Firstname LastName"),
+                            React.createElement("img", { src: "./assets/icons/message.png", alt: "" }),
+                            React.createElement("p", null, "Message"),
+                            React.createElement("img", { src: "./assets/icons/profile.png", alt: "" }),
+                            React.createElement("p", null, "Profile")))),
+                React.createElement(PanelDiv, null,
+                    React.createElement("div", null,
+                        React.createElement("div", null,
+                            React.createElement("img", { className: "profilowe", src: "/assets/Profilowe.png", alt: "" }),
+                            React.createElement("p", null, "Firstname LastName"),
+                            React.createElement("img", { src: "./assets/icons/message.png", alt: "" }),
+                            React.createElement("p", null, "Message"),
+                            React.createElement("img", { src: "./assets/icons/profile.png", alt: "" }),
+                            React.createElement("p", null, "Profile"))))),
             React.createElement(Proposals, null,
-                React.createElement("p", null, "Proposals")),
+                React.createElement(ProposalsDiv, null,
+                    React.createElement("h1", null, "Proposals"),
+                    React.createElement("div", null,
+                        React.createElement("p", null, "Name"),
+                        React.createElement("p", null, "Entity"),
+                        React.createElement("p", null, "Location"),
+                        React.createElement("p", null, "Expertise"),
+                        React.createElement("p", null, "Date"),
+                        React.createElement("p", null, "Firm")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Operation ti.."),
+                        React.createElement("p", null, "Renault Co.."),
+                        React.createElement("p", null, "France"),
+                        React.createElement("p", null, "#Tax"),
+                        React.createElement("p", null, "20/01/2018"),
+                        React.createElement("p", null, "Racine")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Op. Prometh.."),
+                        React.createElement("p", null, "Renault HQ"),
+                        React.createElement("p", null, "USA"),
+                        React.createElement("p", null, "#M&A"),
+                        React.createElement("p", null, "18/02/2019"),
+                        React.createElement("p", null, "Clifford chance")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Op. Latandre"),
+                        React.createElement("p", null, "Renault Br"),
+                        React.createElement("p", null, "Italia"),
+                        React.createElement("p", null, "#Social"),
+                        React.createElement("p", null, "18/02/2019"),
+                        React.createElement("p", null, "SVZ")))),
             React.createElement(InternalRevievs, null,
-                React.createElement("p", null, "Internal Revievs")),
+                React.createElement(ProposalsDiv, null,
+                    React.createElement("h1", null, "Internal Revievs"),
+                    React.createElement("div", null,
+                        React.createElement("p", null, "Name"),
+                        React.createElement("p", null, "Entity"),
+                        React.createElement("p", null, "Location"),
+                        React.createElement("p", null, "Expertise"),
+                        React.createElement("p", null, "Date")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Operation ti.."),
+                        React.createElement("p", null, "Renault Co.."),
+                        React.createElement("p", null, "France"),
+                        React.createElement("p", null, "#Tax"),
+                        React.createElement("p", null, "20/01/2018")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Op. Prometh.."),
+                        React.createElement("p", null, "Renault HQ"),
+                        React.createElement("p", null, "USA"),
+                        React.createElement("p", null, "#M&A"),
+                        React.createElement("p", null, "18/02/2019")),
+                    React.createElement("div", { className: "divv" },
+                        React.createElement("p", null, "Op. Latandre"),
+                        React.createElement("p", null, "Renault Br"),
+                        React.createElement("p", null, "Italia"),
+                        React.createElement("p", null, "#Social"),
+                        React.createElement("p", null, "18/02/2019")))),
             React.createElement(AmountOfFees, null,
-                React.createElement("p", null, "Amount of Fees")))));
+                React.createElement(AmountOfFeesDiv, null,
+                    React.createElement("h1", null, "Amount of Fees"),
+                    React.createElement("div", null,
+                        React.createElement("div", null,
+                            React.createElement("h1", null, "Year"),
+                            React.createElement("p", null, "2019"),
+                            React.createElement("p", null, "2018"),
+                            React.createElement("p", null, "2017")),
+                        React.createElement("div", null,
+                            React.createElement("h1", null, "Cost Center"),
+                            React.createElement("p", null, "CS 153"),
+                            React.createElement("p", null, "CS 153"),
+                            React.createElement("p", null, "CS 47"),
+                            React.createElement("p", null, "CS 153"),
+                            React.createElement("p", null, "CS 32")),
+                        React.createElement("div", null,
+                            React.createElement("h1", null, "Total Amount"),
+                            React.createElement("p", null, "3 500$"),
+                            React.createElement("p", null, "9 500$"),
+                            React.createElement("p", null, "10 500$"),
+                            React.createElement("p", null, "18 500$"),
+                            React.createElement("p", null, "15 500$")),
+                        React.createElement("div", null,
+                            React.createElement("h1", null, "Law firm"),
+                            React.createElement("p", null, "Clifford chance"),
+                            React.createElement("p", null, "Linklaters"),
+                            React.createElement("p", null, "Linklaters"),
+                            React.createElement("p", null, "Linklaters"),
+                            React.createElement("p", null, "Linklaters"))))))));
 };
 exports["default"] = exports.Profile;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15;

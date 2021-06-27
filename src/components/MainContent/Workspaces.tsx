@@ -38,23 +38,6 @@ export const Workspaces: FC = () => {
         
       </Carousel>
     </Wrapper>
-
-
-
-      // <>
-      //   <WorkspacesWrapper>
-      //       <MainContentWrapper>
-      //           <WorkspacesHeader>
-      //               <HeaderDiv>
-      //               <h1>Workspaces</h1>
-      //               </HeaderDiv>
-      //           </WorkspacesHeader>
-      //           <PublicationsDiv>
-
-      //           </PublicationsDiv>
-      //       </MainContentWrapper>
-      //   </WorkspacesWrapper>
-      // </>
     );
   };
   export default Workspaces;

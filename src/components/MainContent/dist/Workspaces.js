@@ -20,21 +20,7 @@ exports.Workspaces = function () {
             React.createElement(Workspace_1["default"], null, "3"),
             React.createElement(Workspace_1["default"], null, "4"),
             React.createElement(Workspace_1["default"], null, "5"),
-            React.createElement(Workspace_1["default"], null, "6")))
-    // <>
-    //   <WorkspacesWrapper>
-    //       <MainContentWrapper>
-    //           <WorkspacesHeader>
-    //               <HeaderDiv>
-    //               <h1>Workspaces</h1>
-    //               </HeaderDiv>
-    //           </WorkspacesHeader>
-    //           <PublicationsDiv>
-    //           </PublicationsDiv>
-    //       </MainContentWrapper>
-    //   </WorkspacesWrapper>
-    // </>
-    );
+            React.createElement(Workspace_1["default"], null, "6"))));
 };
 exports["default"] = exports.Workspaces;
 var templateObject_1;

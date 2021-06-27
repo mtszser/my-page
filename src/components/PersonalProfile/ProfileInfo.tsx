@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import styled from 'styled-components'
 
 const ProfileButtons = [
@@ -27,9 +27,9 @@ const ProfileButtons = [
 
 const NavDiv = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 align-items: center;
-width: 85%;
+width: 100%;
 height: 30%;
 & div > {
     display: flex;
@@ -56,34 +56,96 @@ height: 30%;
 const UserInfo = styled.div`
 display: flex;
 width: 100%;
-height: 80px;
-background-color: red;
+height: auto;
 `;
 const ProfileDiv = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: auto;
+width: 15%;
 height: auto;
 align-items: center;
 text-align: center;
 margin-left: 10px;
 & > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
 }
 & > a {
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     color: black;
+    margin-top: 10px;
+}
+`;
+
+const ProfileName = styled.div`
+display: flex;
+flex-direction: column;
+width: 100px;
+height: auto;
+& > span {
+    font-size: 15px;
+    margin-top: 5px;
+}
+`;
+
+type addressType = {
+    city: string;
+    street: string;
+    suite: string;
+}
+
+type CompanyType = {
+    name: string;
+} 
+
+type UserProfileType = {
+    id: number;
+    email: string;
+    phone: string;
+    name: string;
+    body: string;
+    address: addressType;
+    company: CompanyType;
+}
+
+const ContactUserDiv = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 64%;
+height: auto;
+& > span {
+    font-size: 15px;
+}
+`;
+
+const EditButton = styled.div`
+& > img {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 `;
 
 
 
 
+
+
 export const ProfileInfo: FC = () => {
+
+    const [apiUserInfo, setApiUserInfo] = useState<UserProfileType>()
+    useEffect(()=> {
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+        .then(res=>res.json())
+        .then(json=>setApiUserInfo(json))
+        .then(json => console.log(json))
+     }, [])
+
     return (
         <>
         <NavDiv>
@@ -100,9 +162,18 @@ export const ProfileInfo: FC = () => {
             <img src="./assets/profilowe.png" alt=""></img>
             <a href="/profile">See Profile</a>
             </ProfileDiv>
-            <div>
+            <ProfileName>
+                      <span>{apiUserInfo?.name}</span>
+                      <span>{apiUserInfo?.company.name}</span>
+                      <span>{apiUserInfo?.address.city}</span>
+                      <span>{apiUserInfo?.address.street}</span>
+            </ProfileName>
+            <ContactUserDiv>
+                <span>{apiUserInfo?.email}</span>
+                <span>{apiUserInfo?.phone}</span>
+            </ContactUserDiv>
+            <EditButton><img src="./assets/icons/pencil.png" alt=""></img></EditButton>
 
-            </div>
             </UserInfo>
 
         </>
