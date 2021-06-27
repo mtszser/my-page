@@ -76,7 +76,7 @@ margin-left: 5px;
 }
 `;
 
-type Publication = {
+type PublicationType = {
     userId: number;
     id: number;
     body: string;
@@ -88,21 +88,21 @@ type Publication = {
 
 export const Publication: FC = () => {
 
-    const [apiPub, setApi] = useState<Publication>()
+    const [apiPub, setApi] = useState<PublicationType>()
     useEffect(()=> {
         fetch("https://jsonplaceholder.typicode.com/posts/6")
         .then(res=>res.json())
         .then(json=>setApi(json))
      }, [])
 
-     const [apiPub1, setApi1] = useState<Publication>()
+     const [apiPub1, setApi1] = useState<PublicationType>()
     useEffect(()=> {
         fetch("https://jsonplaceholder.typicode.com/posts/9")
         .then(res=>res.json())
         .then(json=>setApi1(json))
      }, [])
 
-     const [apiPub2, setApi2] = useState<Publication>()
+     const [apiPub2, setApi2] = useState<PublicationType>()
     useEffect(()=> {
         fetch("https://jsonplaceholder.typicode.com/posts/1")
         .then(res=>res.json())

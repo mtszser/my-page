@@ -7,6 +7,7 @@ import MainContent from '../MainContent/MainContent';
 import RoutingSite from '../RoutingSite/RoutingSite';
 import Profile from '../PersonalProfile/Profile';
 import WorkspacePage from '../WorkspacePage/WorkspacePage';
+import Entities from '../EntitiesPage/Entities';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
   
 
@@ -44,6 +45,7 @@ const MainPage: FC = () => {
                     <Route path="/routingsite" component={RoutingSite}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/workspaces" component={WorkspacePage}/>
+                    <Route path="/entities" component={Entities}/>
                     </Switch>
                 </MainWrapper>
             </Main>

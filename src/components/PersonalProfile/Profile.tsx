@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components'
+import ProfileInfo from './ProfileInfo';
 
 
 const MainWrapper = styled.div`
@@ -23,11 +24,36 @@ background-color: white;
 
 const ProfileNav = styled.div`
 display: flex;
+flex-direction: column;
 width: 100%;
-height: auto;
+height: 300px;
+align-items: center;
 justify-content: space-around;
 background-color: blue;
 `;
+
+const ProfileNavWrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: right;
+width: 95%;
+height: 95%;
+background-color: wheat;
+`;
+
+
+const ProfileNavButtons = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-top: 10px;
+height: auto;
+justify-content: flex-end;
+background-color: white;
+align-items: center;
+text-align: center;
+`;
+
 
 const PanelInformations = styled.div`
 display: flex;
@@ -67,6 +93,11 @@ export const Profile: FC = () => {
         <MainWrapper>
             <ProfileWrapper>
                     <ProfileNav>
+                        <ProfileNavWrapper>
+                        <ProfileNavButtons>
+                            <ProfileInfo></ProfileInfo>
+                        </ProfileNavButtons>
+                        </ProfileNavWrapper>
                     </ProfileNav>
                     <PanelInformations>
                     <p>Panel Informations</p>

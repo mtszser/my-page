@@ -57,4 +57,5 @@ exports.Publication = function () {
                         React.createElement("img", { src: '/assets/photos/JohnDoe.jpg', alt: "guy" }),
                         React.createElement("span", null, "John Doe")))))));
 };
+exports["default"] = exports.Publication;
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
